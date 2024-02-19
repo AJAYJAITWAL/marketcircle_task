@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row", style="display: flex">
+    <div class="col-4 w-25" style="border-right: 1px solid black; width: 250px; height: 500px; text-align: center">
+      <h1>People</h1>
+      <% @people.each do |person| %>
+        <%= link_to "#{person.name}", person_details_path(person.id), data: { turbo_stream: true } %>
+        <br/>
+      <% end %>
+    </div>
+    <div class="col-8", style="width: 50%">
+      <h1 style="text-align: center">Details</h1>
+      <div id='person_details'></div>
+    </div>
+  </div>
+</div>
